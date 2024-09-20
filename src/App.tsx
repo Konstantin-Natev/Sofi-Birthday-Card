@@ -1,14 +1,33 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Card } from './components/Card/Card';
+import { ZoomingScreen } from './components/ZommingScreen/ZoomingScreen';
 
 function App() {
+  const [isCardClicked, setIsCardClicked] = useState(false); // For card clicked state
+  const [showZoomingScreen, setShowZoomingScreen] = useState(false); // For controlling the ZoomingScreen
+
+  // Effect to handle the delay for showing ZoomingScreen after the card is clicked
+  useEffect(() => {
+    if (isCardClicked) {
+      const timer = setTimeout(() => {
+        setShowZoomingScreen(true);
+      }, 2000); // 2-second delay before showing the ZoomingScreen
+
+      return () => clearTimeout(timer); // Clean up the timer on unmount
+    }
+  }, [isCardClicked]);
 
   return (
-    <Card />
+    <>
+      <Card isCardClicked={isCardClicked} setIsCardClicked={setIsCardClicked} />
+      {showZoomingScreen && <ZoomingScreen />}
+    </>
   );
 }
 
 export default App;
+
 
   // const refContainer = useRef(null);
 

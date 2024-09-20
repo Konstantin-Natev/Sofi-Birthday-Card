@@ -46,7 +46,7 @@
   transform: perspective(800px) rotateY(0deg);
   transition: all .8s ease-in-out;
 }
-.card:hover .frontSide{
+.frontSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   background-color: #ecf0f1;
 }
@@ -70,9 +70,13 @@
   background-color: #ecf0f1;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
 }
-.card:hover .backSide{
+.backSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.3),
               inset 2px 0px 15px 0px rgba(0,0,0,0.1);
   background-color: #ecf0f1;
+}
+
+.hideTheCardAnimation {
+   display: none;
 }
