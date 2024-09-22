@@ -5,7 +5,7 @@
   border: 10px solid #000;
   margin: 20px auto;
   box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
-  background-color: #e6f0e6;
+  background-color: #ecf0f1;;
   overflow-y: hidden;
 }
 
@@ -23,6 +23,16 @@
 
 .textContent {
   font-size: 2rem !important;
+  line-height: 1.5;
+  font-family: 'Nobile';
+  color: #0984e3;
+  font-style: italic;
+  text-align: center;
+  margin: 20px auto 0px auto;
+}
+
+.textContentCard {
+  font-size: 1.5rem !important;
   line-height: 1.5;
   font-family: 'Nobile';
   color: #0984e3;
@@ -62,15 +72,12 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  margin: -10px 0px 0px -10px;
-  border: 10px solid #000;
   backface-visibility: visible;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
   transition: all 0.8s ease-in-out;
-  background-color: #000;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
+  background-color: #ecf0f1;;
   overflow-y: hidden;
 }
 
@@ -105,6 +112,12 @@
   color: #fff;
   font-family: "Monoton";
   animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.birthdayCakeImage {
+  position: absolute;
+  left: 35%;
+  bottom: 10%;
 }
 
 @keyframes neon {
