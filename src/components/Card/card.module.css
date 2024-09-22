@@ -164,3 +164,9 @@
         left: 5%;
     }
 }
+
+.frontSide,
+.backSide,
+.card {
+    will-change: transform;
+}

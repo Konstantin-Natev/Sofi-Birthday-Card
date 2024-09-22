@@ -21,8 +21,9 @@ export const Card = ({ isCardClicked, setIsCardClicked }: CardProps) => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const pinAnim = gsap.timeline({ paused: true })
-                .to(bg1.current, { transform: "scale(3.05)", duration: 3, ease: "power2.out" });
+          const isMobile = window.innerWidth < 600;
+          const pinAnim = gsap.timeline({ paused: true })
+            .to(bg1.current, { transform: isMobile ? "scale(1.5)" : "scale(3.05)", duration: isMobile ? 1 : 3, ease: "power2.out" });
 
             if (isCardClicked) {
                 pinAnim.play();
