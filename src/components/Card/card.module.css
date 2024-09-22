@@ -1,28 +1,27 @@
 .card {
     position: relative;
-    width: 300px;
-    height: 425px;
+    width: 800px;
+    height: 1200px;
     border: 10px solid #000;
     margin: 50px auto 50px auto;
     box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
     background-color: #e6f0e6;
+    overflow-y: hidden;
 }
 
 .contentContainer{
-  width: 80%;
-  height: 80%;
   margin: auto;
 }
 
 .headerText{
   font-family: 'Nobile', sans-serif;
-  font-size: 1.5em;
+  font-size: 3rem;
   margin: 60px auto 60px auto;
   color: #000;
   font-weight: 700;
 }
 .textContent {
-  font-size: 1.1em;
+  font-size: 3rem !important;
   line-height: 1.5;
   font-family: 'Nobile';
   color: #0984e3;
@@ -45,10 +44,12 @@
   transform-origin: 0% 50%;
   transform: perspective(800px) rotateY(0deg);
   transition: all .8s ease-in-out;
+  overflow-y: hidden;
 }
 .frontSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   background-color: #ecf0f1;
+  overflow-y: hidden;
 }
 .card .front img, .card .back img{
   width: 200px;
@@ -67,16 +68,80 @@
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
   transition: all 0.8s ease-in-out;
-  background-color: #ecf0f1;
+  background-color: #000;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
+  overflow-y: hidden;
 }
 .backSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.3),
               inset 2px 0px 15px 0px rgba(0,0,0,0.1);
-  background-color: #ecf0f1;
+  background-color: #000;
+  overflow-y: hidden;
 }
 
-.hideTheCardAnimation {
-   display: none;
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+.whiteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+  overflow-y: hidden;
+}
+
+.rootContainer {
+  position: absolute;
+  top: 20%;
+  left: 19%;
+}
+
+.neonText {
+  text-align: center;
+  font-size: 6rem !important;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  top: 8%;
+  left: 7%;
+  font-family: "Monoton";
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
+      0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+}
+
+.wormholeContainer {
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; /* Higher z-index to ensure visibility */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
 }
