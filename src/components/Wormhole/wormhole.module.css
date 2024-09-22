@@ -6,13 +6,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black; /* Space background */
 }
 
 .sphere {
-  width: 20px;
-  height: 20px;
-  background-color: blue;
+  width: 40px; /* Small size to mimic stars */
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0) 70%); /* Star-like gradient */
   border-radius: 50%;
   position: absolute;
   transform-style: preserve-3d;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+  opacity: 0.8; /* Slight transparency for a distant feel */
 }

@@ -6,7 +6,7 @@ const Wormhole = () => {
   const wormholeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const count = 500; // Number of spheres
+    const count = 50; // Number of spheres
     const radius = 1500; // Radius of the wormhole
     const length = 5000; // Length (depth) of the wormhole
 
@@ -30,7 +30,7 @@ const Wormhole = () => {
     gsap.to(wormhole, {
       rotationZ: 360,
       repeat: -1,
-      duration: 6,
+      duration: 5,
       ease: 'none',
     });
   }, []);
