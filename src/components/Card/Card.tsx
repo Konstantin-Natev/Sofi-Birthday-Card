@@ -41,8 +41,10 @@ export const Card = ({ isCardClicked, setIsCardClicked }: CardProps) => {
 
     return (
         <>
-            <Typography className={styles.neonText}>Keep calm and click me</Typography>
-            <Grid ref={bg1} className={`${styles.card} ${styles.rootContainer} perspective animate__animated animate__zoomIn`}>
+            <Grid className={styles.textContainer}>
+              <p className={styles.neonText}>Keep calm and click me</p>
+            </Grid>
+            <Grid ref={bg1} className={`${styles.card} ${styles.rootContainer} perspective animate__animated animate__zoomIn animate__delay-2s`}>
                 <Grid ref={bg2} className={`${styles.backSide} ${isCardClicked ? styles.backSideClicked : ""}`}>
                 </Grid>
                 <Grid onClick={handleOpenCard} className={`${styles.frontSide} ${isCardClicked ? styles.frontSideClicked : ""}`}>

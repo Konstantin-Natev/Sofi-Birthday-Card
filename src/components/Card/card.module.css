@@ -1,12 +1,12 @@
 .card {
-    position: relative;
-    width: 800px;
-    height: 1200px;
-    border: 10px solid #000;
-    margin: 50px auto 50px auto;
-    box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
-    background-color: #e6f0e6;
-    overflow-y: hidden;
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border: 10px solid #000;
+  margin: 20px auto;
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #e6f0e6;
+  overflow-y: hidden;
 }
 
 .contentContainer{
@@ -15,20 +15,22 @@
 
 .headerText{
   font-family: 'Nobile', sans-serif;
-  font-size: 3rem;
-  margin: 60px auto 60px auto;
+  font-size: 2.5rem;
+  margin: 30px auto;
   color: #000;
   font-weight: 700;
 }
+
 .textContent {
-  font-size: 3rem !important;
+  font-size: 2rem !important;
   line-height: 1.5;
   font-family: 'Nobile';
   color: #0984e3;
   font-style: italic;
   text-align: center;
-  margin: 30px auto 0px auto;
+  margin: 20px auto 0px auto;
 }
+
 .frontSide{
   display: flex;
   justify-content: center;
@@ -46,14 +48,13 @@
   transition: all .8s ease-in-out;
   overflow-y: hidden;
 }
+
 .frontSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   background-color: #ecf0f1;
   overflow-y: hidden;
 }
-.card .front img, .card .back img{
-  width: 200px;
-}
+
 .backSide {
   display: flex;
   justify-content: center;
@@ -72,6 +73,7 @@
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.1);
   overflow-y: hidden;
 }
+
 .backSideClicked{
   transform: perspective(800px) rotateY(-170deg);
   box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.3),
@@ -89,34 +91,18 @@
   }
 }
 
-.whiteOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  opacity: 0;
-  z-index: 1000;
-  pointer-events: none;
-  overflow-y: hidden;
-}
-
 .rootContainer {
   position: absolute;
-  top: 20%;
-  left: 19%;
+  top: 10%;
+  left: 10%;
 }
 
 .neonText {
   text-align: center;
-  font-size: 6rem !important;
+  font-size: 4rem;
   line-height: 1;
   text-decoration: none;
   color: #fff;
-  position: absolute;
-  top: 8%;
-  left: 7%;
   font-family: "Monoton";
   animation: neon 1.5s ease-in-out infinite alternate;
 }
@@ -139,9 +125,42 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 5; /* Higher z-index to ensure visibility */
+  z-index: 5;
   display: flex; 
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+@media (max-width: 600px) {
+    .headerText {
+        font-size: 2rem;
+    }
+
+    .textContent {
+        font-size: 1.5rem;
+    }
+
+    .neonText {
+        font-size: 5rem;
+    }
+
+    .card {
+        margin: 10px auto;
+    }
+
+    .frontSide img, .backSide img {
+        width: 100px;
+    }
+
+    .rootContainer {
+        top: 5%;
+        left: 5%;
+    }
 }
