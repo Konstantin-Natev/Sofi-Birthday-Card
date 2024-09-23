@@ -32,13 +32,14 @@
 }
 
 .textContentCard {
-  font-size: 1.5rem !important;
+  font-size: 1.75rem !important;
   line-height: 1.5;
   font-family: 'Nobile';
   color: #0984e3;
   font-style: italic;
   text-align: center;
   margin: 20px auto 0px auto;
+  padding-right: 10px;
 }
 
 .frontSide{
